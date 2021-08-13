@@ -29,7 +29,7 @@ public class SaldoFinalController {
 
         return ResponseEntity.ok(iterableResponse);
     }
-    @GetMapping("/{pcn}")
+    @GetMapping("/PCN/{pcn}")
     public ResponseEntity<TelventSaldoFinal> getByPcn(@PathVariable String pcn){
         TelventSaldoFinal response = apiSaldoFinal.getByPcn(pcn);
 
@@ -37,7 +37,7 @@ public class SaldoFinalController {
 
     }
 
-    @GetMapping("/{csn}")
+    @GetMapping("/CSN/{csn}")
     public ResponseEntity<TelventSaldoFinal> getByCsn(@PathVariable String csn){
         TelventSaldoFinal response = apiSaldoFinal.getByCsn(csn);
 
