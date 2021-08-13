@@ -5,6 +5,9 @@ import mx.com.tde.metrorrey.backend.persistence.repository.TelventCancelacionesR
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 @Service
 public class ApiCancelaciones {
 
@@ -19,7 +22,9 @@ public class ApiCancelaciones {
         return telventCancelacionesRepo.findAll();
     }
 
-    public TelventCancelaciones getByCode(String code) {
-        return telventCancelacionesRepo.findByCodigo(code);
+    public TelventCancelaciones getByNoVale(Integer noVale, String fecha) throws ParseException {
+        Date date=new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
+        System.out.println("Entro al app" +date.toString());
+        return telventCancelacionesRepo.findByNoVale(noVale, date);
     }
 }

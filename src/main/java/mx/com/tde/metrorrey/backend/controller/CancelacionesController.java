@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.text.ParseException;
+
 @Controller
 @RequestMapping(ApiConstants.REST_API_VERSION + ApiConstants.CANCELACIONES_CONTEXT)
 @CrossOrigin
@@ -30,9 +32,10 @@ public class CancelacionesController {
         return ResponseEntity.ok(iterableResponse);
     }
 
-    @GetMapping("/{code}")
-    public ResponseEntity<TelventCancelaciones> getByCode(@PathVariable String code){
-        TelventCancelaciones response = apiCancelaciones.getByCode(code);
+    @GetMapping("/{No_Vale}/{fecha}")
+    public ResponseEntity<TelventCancelaciones> getByNoVale(@PathVariable Integer No_Vale, @PathVariable String fecha) throws ParseException {
+        System.out.println("Entro al controller");
+        TelventCancelaciones response = apiCancelaciones.getByNoVale(No_Vale, fecha);
 
         return ResponseEntity.ok(response);
 
