@@ -35,5 +35,11 @@ public class ApiEstadisticos {
         return  telventBoletosRepo.save(telventBoletos);
     }
 
+    public TelventVta setVta(TelventVta telventVta){
+        return telventVtaRepo.save(telventVta);
+
+    }
+    public TelventEntradas setEntradas(TelventEntradas telventEntradas){
+        return telventEntradasRepo.save(telventEntradas);
     }
 }
