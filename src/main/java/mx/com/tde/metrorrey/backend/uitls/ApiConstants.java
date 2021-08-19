@@ -7,7 +7,7 @@ public class ApiConstants {
 
     public static final String SALDO_FINAL_CONTEXT = "/saldo_final";
 
-    public static final String RECAUDACION_CONTEXT = "/recaudacion";
+    public static final String ESTADISTICOS_CONTEXT = "/estadisticos";
 
     public static final String LISTAS_CONTEXT = "/listas";
 }
