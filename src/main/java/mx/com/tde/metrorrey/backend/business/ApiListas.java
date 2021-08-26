@@ -7,6 +7,10 @@ import mx.com.tde.metrorrey.backend.persistence.repository.TelventWhiteListRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 @Service
 public class ApiListas {
@@ -19,12 +23,22 @@ public class ApiListas {
         this.telventBlackListRepo = telventBlackListRepo;
         this.telventWhiteListRepo = telventWhiteListRepo;
     }
-    public Iterable<TelventBlackList> getAllBlackList() {
-        return telventBlackListRepo.findAll();
+
+    public Iterable<TelventBlackList> getBlackListByDates(String  dFrom, String dTo) throws ParseException {
+        Date from=new SimpleDateFormat("yyyy-MM-dd").parse(dFrom);
+        Date to=new SimpleDateFormat("yyyy-MM-dd").parse(dTo);
+
+        return telventBlackListRepo.findByTimeCustomQuery(from, to);
     }
-    public Iterable<TelventWhiteList> getAllWhiteList() {
-        return telventWhiteListRepo.findAll();
+
+
+    public Iterable<TelventWhiteList> getWhiteListByDates(String  dFrom, String dTo) throws ParseException  {
+        Date from=new SimpleDateFormat("yyyy-MM-dd").parse(dFrom);
+        Date to=new SimpleDateFormat("yyyy-MM-dd").parse(dTo);
+        return telventWhiteListRepo.findByTimeCustomQuery(from, to);
     }
+
+
 
     public TelventBlackList getBlackListByCsn(String csn) {
           return telventBlackListRepo.findByCsn(csn);

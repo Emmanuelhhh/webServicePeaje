@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.text.ParseException;
+
 @Controller
 @RequestMapping(ApiConstants.REST_API_VERSION + ApiConstants.LISTAS_CONTEXT)
 @CrossOrigin
@@ -24,16 +26,16 @@ public class ListasController {
         this.apiListas = apiListas;
     }
 
-    @GetMapping("/blackList")
-    public ResponseEntity<Iterable<TelventBlackList>> getAllBlackList() {
-        Iterable<TelventBlackList> iterableResponse = apiListas.getAllBlackList();
+    @GetMapping("/blackList/{fechaInicio}/{fechaFin}")
+    public ResponseEntity<Iterable<TelventBlackList>> getBlackListByDates(@PathVariable String fechaInicio, @PathVariable String fechaFin) throws ParseException {
+        Iterable<TelventBlackList> iterableResponse = apiListas.getBlackListByDates(fechaInicio, fechaFin);
 
         return ResponseEntity.ok(iterableResponse);
     }
 
-    @GetMapping("/whiteList")
-    public ResponseEntity<Iterable<TelventWhiteList>> getAllWhiteList() {
-        Iterable<TelventWhiteList> iterableResponse = apiListas.getAllWhiteList();
+    @GetMapping("/whiteList/{fechaInicio}/{fechaFin}")
+    public ResponseEntity<Iterable<TelventWhiteList>> getWhiteListByDates(@PathVariable String fechaInicio, @PathVariable String fechaFin) throws ParseException {
+        Iterable<TelventWhiteList> iterableResponse = apiListas.getWhiteListByDates(fechaInicio, fechaFin);
 
         return ResponseEntity.ok(iterableResponse);
     }
