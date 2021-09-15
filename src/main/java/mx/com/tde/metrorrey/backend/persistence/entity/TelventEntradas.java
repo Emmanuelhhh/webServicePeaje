@@ -10,7 +10,6 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Immutable
 @Table(name = "telvent_entrada")
 public class TelventEntradas implements Serializable {
 

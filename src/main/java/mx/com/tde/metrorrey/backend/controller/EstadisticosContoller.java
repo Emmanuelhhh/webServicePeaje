@@ -32,7 +32,11 @@ public class EstadisticosContoller {
         return ResponseEntity.ok(response);
     }
 
-
+    /**
+     * Utiliza guarda ventas y recargas
+     * @param telventVta
+     * @return
+     */
     @PostMapping("/ventas")
     public ResponseEntity<BaseResponse> saveVenta(@RequestBody TelventVta telventVta){
         BaseResponse response = apiEstadisticos.setVta(telventVta);
@@ -45,6 +49,13 @@ public class EstadisticosContoller {
         return ResponseEntity.ok(response);
     }
 
+    /**
+     *
+     * @param telventBoletos
+     * @return
+     * @deprecated No es necesario el estadistico de boletos debido a que no hay
+     */
+    @Deprecated(since = "v0.2.0")
     @PostMapping("/boletos")
     public ResponseEntity<BaseResponse> saveBoleto(@RequestBody TelventBoletos telventBoletos){
         BaseResponse response = apiEstadisticos.setBoletos(telventBoletos);
