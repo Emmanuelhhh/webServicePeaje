@@ -1,8 +1,10 @@
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/peaje
-    username: apiuser
-    password: desarrollo
+    #url: jdbc:mysql://192.168.10.81:3306/peaje
+    url: jdbc:mysql://localhost:3306/peaje #dev
+    username: root
+    #password: P@ssw0rd #Prdo
+    password: desarrollo #dev
   jpa:
     hibernate:
       naming:

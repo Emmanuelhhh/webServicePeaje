@@ -1,5 +1,6 @@
 package mx.com.tde.metrorrey.backend.business;
 
+import mx.com.tde.metrorrey.backend.domain.response.BaseResponse;
 import mx.com.tde.metrorrey.backend.persistence.entity.TelventBoletos;
 import mx.com.tde.metrorrey.backend.persistence.entity.TelventRecaudacion;
 import mx.com.tde.metrorrey.backend.persistence.entity.TelventVta;
@@ -28,18 +29,51 @@ public class ApiEstadisticos {
 
     }
 
-    public TelventRecaudacion setRecaudacion(TelventRecaudacion telventRecaudacion) {
-        return telventRecaudacionRepo.save(telventRecaudacion);
-    }
-    public TelventBoletos setBoletos(TelventBoletos telventBoletos){
-        return  telventBoletosRepo.save(telventBoletos);
+    public BaseResponse setRecaudacion(TelventRecaudacion telventRecaudacion) {
+        BaseResponse response = new BaseResponse();
+        try {
+            telventRecaudacionRepo.save(telventRecaudacion);
+
+            response.setStatus(200);
+        } catch (Exception e) {
+            response.setStatus(500);
+        }
+        return response;
     }
 
-    public TelventVta setVta(TelventVta telventVta){
-        return telventVtaRepo.save(telventVta);
-
+    public BaseResponse setBoletos(TelventBoletos telventBoletos) {
+        BaseResponse response = new BaseResponse();
+        try {
+            telventBoletosRepo.save(telventBoletos);
+            response.setStatus(200);
+        } catch (Exception e) {
+            response.setStatus(500);
+        }
+        return response;
     }
-    public TelventEntradas setEntradas(TelventEntradas telventEntradas){
-        return telventEntradasRepo.save(telventEntradas);
+
+    public BaseResponse setVta(TelventVta telventVta) {
+        BaseResponse response = new BaseResponse();
+        try {
+            telventVtaRepo.save(telventVta);
+            response.setStatus(200);
+        } catch (Exception e) {
+            response.setStatus(500);
+        }
+        return response;
+    }
+
+    public BaseResponse setEntradas(TelventEntradas telventEntradas) {
+        BaseResponse response = new BaseResponse();
+        try {
+            telventEntradasRepo.save(telventEntradas);
+            response.setStatus(200);
+            response.setDescription("OK");
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setStatus(500);
+            response.setDescription(e.getMessage());
+        }
+        return response;
     }
 }
