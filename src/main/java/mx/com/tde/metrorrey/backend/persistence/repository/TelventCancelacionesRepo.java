@@ -11,5 +11,7 @@ public interface TelventCancelacionesRepo extends CrudRepository<TelventCancelac
     @Query(value = "Select * from telvent_cancelaciones where No_Vale = :noVale  AND Fecha = :fecha ", nativeQuery = true)
     TelventCancelaciones findByNoVale(Integer noVale, Date fecha);
 
+    TelventCancelaciones findByCodigo(String codigo);
+
 
 }

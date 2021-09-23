@@ -32,10 +32,10 @@ public class CancelacionesController {
         return ResponseEntity.ok(iterableResponse);
     }
 
-    @GetMapping("/{No_Vale}/{fecha}")
-    public ResponseEntity<TelventCancelaciones> getByNoVale(@PathVariable Integer No_Vale, @PathVariable String fecha) throws ParseException {
+    @GetMapping("/{codigo}")
+    public ResponseEntity<TelventCancelaciones> getByNoVale(@PathVariable String codigo) throws ParseException {
         System.out.println("Entro al controller");
-        TelventCancelaciones response = apiCancelaciones.getByNoVale(No_Vale, fecha);
+        TelventCancelaciones response = apiCancelaciones.getByCodigo(codigo);
 
         return ResponseEntity.ok(response);
 

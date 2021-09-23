@@ -22,9 +22,7 @@ public class ApiCancelaciones {
         return telventCancelacionesRepo.findAll();
     }
 
-    public TelventCancelaciones getByNoVale(Integer noVale, String fecha) throws ParseException {
-        Date date=new SimpleDateFormat("yyyy-MM-dd").parse(fecha);
-        System.out.println("Entro al app" +date.toString());
-        return telventCancelacionesRepo.findByNoVale(noVale, date);
+    public TelventCancelaciones getByCodigo(String codigo) throws ParseException {
+        return telventCancelacionesRepo.findByCodigo(codigo);
     }
 }
