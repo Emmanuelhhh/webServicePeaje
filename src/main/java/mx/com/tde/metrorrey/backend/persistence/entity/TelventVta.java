@@ -10,7 +10,7 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Table(name = "telvent_vta")
+@Table(name = "stcl3_vta")
 public class TelventVta implements Serializable {
 
     @Id

@@ -11,7 +11,7 @@ import java.sql.Date;
 @Data
 @Entity
 @Immutable
-@Table(name = "telvent_boletos")
+@Table(name = "stcl3_boletos")
 public class TelventBoletos  implements Serializable{
 
     @Id

@@ -55,7 +55,7 @@ public class EstadisticosContoller {
      * @return
      * @deprecated No es necesario el estadistico de boletos debido a que no hay
      */
-    @Deprecated(since = "v0.2.0")
+    //@Deprecated(since = "v0.2.0")
     @PostMapping("/boletos")
     public ResponseEntity<BaseResponse> saveBoleto(@RequestBody TelventBoletos telventBoletos){
         BaseResponse response = apiEstadisticos.setBoletos(telventBoletos);
