@@ -10,6 +10,6 @@ public interface TelventWhiteListRepo extends CrudRepository<TelventWhiteList, S
 
     TelventWhiteList findByCsn(String csn);
 
-     @Query(value ="select * from telvent_whitelist where fecha >= :dFrom and fecha <= :dTo ORDER BY fecha desc", nativeQuery = true)
+    @Query(value ="select * from telvent_whitelist where fecha >= :dFrom and fecha <= :dTo ORDER BY fecha desc", nativeQuery = true)
     Iterable<TelventWhiteList> findByTimeCustomQuery(Date dFrom, Date dTo);
 }
