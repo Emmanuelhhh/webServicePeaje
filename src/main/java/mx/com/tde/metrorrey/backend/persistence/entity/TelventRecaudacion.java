@@ -59,4 +59,7 @@ public class TelventRecaudacion implements Serializable {
     @Column(name = "Ficha")
     private String ficha;
 
+    @Column(name = "No_Alcancia")
+    private String  alcancia;
+
 }
