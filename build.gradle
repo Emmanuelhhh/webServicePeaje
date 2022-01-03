@@ -5,7 +5,7 @@ plugins {
 }
 
 group = 'mx.com.tde'
-version = '0.2.8'
+version = '0.2.9'
 sourceCompatibility = '11'
 
 configurations {
