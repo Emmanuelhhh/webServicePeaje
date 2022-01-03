@@ -10,7 +10,7 @@ import java.sql.Date;
 
 @Data
 @Entity
-@Immutable
+//@Immutable
 @Table(name = "stcl3_boletos")
 public class TelventBoletos  implements Serializable{
 
