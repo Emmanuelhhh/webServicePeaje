@@ -10,4 +10,6 @@ public class ApiConstants {
     public static final String ESTADISTICOS_CONTEXT = "/estadisticos";
 
     public static final String LISTAS_CONTEXT = "/listas";
+
+    public static final String EMPLEADOS_CONTEXT = "/datosEmpleado";
 }
