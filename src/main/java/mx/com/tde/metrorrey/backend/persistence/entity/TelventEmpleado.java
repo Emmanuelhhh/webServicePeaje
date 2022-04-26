@@ -29,7 +29,7 @@ public class TelventEmpleado implements Serializable {
     private String imss;
 
     @Column(name = "fecha_ingreso")
-    private Date fechaIngreso;
+    private String fechaIngreso;
 
     @Column(name = "tel_casa")
     private String numTel;
